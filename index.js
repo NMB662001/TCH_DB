@@ -1,7 +1,7 @@
 import express from "express";
 import { executeQuery } from "./database.js";
-
 const app = express();
+ 
 const port = 3000;
 
 app.get('/', async (req, res) => {
@@ -20,7 +20,7 @@ app.get("/getdata", async (req, res) => {
 });
 app.get("/deldata", async (req, res) => {
     try {
-      const response = await executeQuery(`delete FROM users where brand='def'`);
+      const response = await executeQuery(`delete FROM users where id='2af36a23-8cad-4046-b675-9bea4b96e572'`);
       console.log(response);
       res.send(response);
     } catch (error) {
@@ -30,7 +30,7 @@ app.get("/deldata", async (req, res) => {
   });
   app.get("/insertdata", async (req, res) => {
     try {
-      const response = await executeQuery(`insert into users (name,brand) values('nisha','abc'),('ram','xyz'),('shruti','def'),('krushna','jkl');`);
+      const response = await executeQuery(`insert into users (name,brand) values('nita','lmn'),('rupali','pqr'),('shruti','def'),('krushna','jkl');`);
       console.log(response);
       res.send(response);
     } catch (error) {
@@ -39,6 +39,33 @@ app.get("/deldata", async (req, res) => {
     }
   });
 
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log(`Server is listening  check at http://localhost:${port}`);
 });
+// import express from 'express'
+
+// const app=express();
+// const port=3000;
+// app.get('/',async(req,res)=>{
+// res.send('express')
+// })
+// app.listen(port,()=>{
+//     console.log('server is working')
+// });
+
+
+
+// import express from "express"
+ 
+// const app = express();
+ 
+// const port = 3000;
+ 
+// (express()).get('/', async(req, res)=>{
+//     res.send("Hii! Server is Up and working")
+// })
+ 
+ 
+// (express()).listen(3000, () => {
+//     console.log(`Server is listening  check at http://localhost:${3000}`);
+//   });
